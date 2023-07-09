@@ -9,3 +9,7 @@ IP: ?
 
 Nutzer: dany
 PW: <im Passwortmanager>
+
+Installation: Run the command in following repo: https://github.com/sdetweil/MagicMirror_scripts
+Offical website: https://magicmirror.builders/
+Modules: https://github.com/MagicMirrorOrg/MagicMirror/wiki/3rd-party-modules
