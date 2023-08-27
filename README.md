@@ -16,3 +16,6 @@ Modules: https://github.com/MagicMirrorOrg/MagicMirror/wiki/3rd-party-modules
 Run: 
 dany@magic-mirror:/MagicMirror $ export MM_CONFIG_FILE=config/config-left.js # Es muss die Umgebungsvariable gesetzt werden
 dany@magic-mirror:/MagicMirror $ DISPLAY=:0 npm start -- --config /home/dany/MagicMirror/config/config-left.js
+
+
+https://kristjanesperanto.github.io/MagicMirror-3rd-Party-Modules/
