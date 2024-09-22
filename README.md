@@ -16,7 +16,7 @@ A custom MagicMirror² smart mirror dashboard built with multiple displays, Rasp
 The mirror displays useful daily information such as calendar events, weather, emergency warnings, cryptocurrency prices, stock data, and smart home climate information while still looking like a regular wall mirror.
 
 <p align="center">
-  <img src="images/final-result.jpg" width="850" alt="Final Magic Mirror result">
+  <img src="final-result.jpg" width="850" alt="Final Magic Mirror result">
 </p>
 
 ---
@@ -146,7 +146,7 @@ The first step was mounting the displays, Raspberry Pis, power supplies, control
 The cables are routed along the frame and fixed in place to keep the setup clean and serviceable.
 
 <p align="center">
-  <img src="images/wiring.jpg" width="750" alt="Back side wiring of the Magic Mirror">
+  <img src="wiring.jpg" width="750" alt="Back side wiring of the Magic Mirror">
 </p>
 
 ### 2. Light Blocking
@@ -156,7 +156,7 @@ To prevent unwanted light from shining through the mirror, the back side was cov
 Only the display areas remain visible through the two-way mirror glass.
 
 <p align="center">
-  <img src="images/back-cover.jpg" width="750" alt="Back side covered with light-blocking foil">
+  <img src="back-cover.jpg" width="750" alt="Back side covered with light-blocking foil">
 </p>
 
 ### 3. Final Result
@@ -164,7 +164,7 @@ Only the display areas remain visible through the two-way mirror glass.
 The final result looks like a normal mirror but displays useful dashboard information.
 
 <p align="center">
-  <img src="images/final-result.jpg" width="850" alt="Final Magic Mirror result">
+  <img src="final-result.jpg" width="850" alt="Final Magic Mirror result">
 </p>
 
 ---
