@@ -1,0 +1,16 @@
+# Secrets and generated config
+.env
+*.env
+!*.env.example
+config.js
+config-left.js
+config-right.js
+
+# Local SFTP profiles with stored passwords
+FileZilla*.local.xml
+
+# Misc
+*.log
+node_modules/
+__pycache__/
+.DS_Store

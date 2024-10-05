@@ -84,7 +84,7 @@ let config = {
             position: "top_left",
             header: "Cryptocurrencies",
             config: {
-                apiKey: 'YOUR_COINMARKETCAP_API_KEY',
+                apiKey: '${COINMARKETCAP_API_KEY}',
                 currencies: ['bitcoin', 'ethereum', 'avalanche', 'xrp', 'solana', 'iota', 'litecoin'],
                 view: 'graphColored',
                 conversion: 'EUR',
@@ -105,7 +105,7 @@ let config = {
 				direction: "column",
 				symbols : ["ALIZF", "SMAWF", "AMZN", "KLKNF", "SHOP", "BBAI", "NVDA", "AAPL"],
 				alias: ["Allianz", "Siemens", "Amazon", "Kloeckner", "Shopify", "BigBear.ai", "Nvidia", "Apple"],
-				purchasePrice: [0, 0, 0, 0, 0, 0],
+				purchasePrice: [${AVSTOCK_PURCHASE_PRICES}],
 				tickerDuration: 10, //default 20
 				//movingAverage: { type: "SMA", periods: [400]},
 				chartDays: 90,
@@ -185,7 +185,7 @@ let config = {
 		{
     		module: 'MMM-Remote-Control',
     		config: {
-				apiKey: 'YOUR_REMOTE_CONTROL_API_KEY'
+				apiKey: '${REMOTE_CONTROL_API_KEY}'
 			}
     	},
 		{
@@ -193,9 +193,9 @@ let config = {
 			position: 'bottom_right', // the location where the module should be displayed
 			header: 'Netatmo', // a header if you like one
 			config: {
-				clientId: 'YOUR_NETATMO_CLIENT_ID', // your app id
-				clientSecret: 'YOUR_NETATMO_CLIENT_SECRET', // your app secret
-				refresh_token: 'YOUR_NETATMO_REFRESH_TOKEN', // your generated refresh token
+				clientId: '${NETATMO_CLIENT_ID}', // your app id
+				clientSecret: '${NETATMO_CLIENT_SECRET}', // your app secret
+				refresh_token: '${NETATMO_REFRESH_TOKEN}', // your generated refresh token
 				refreshInterval: 20,
 				design: "bubbles",
 				showBattery: false,
@@ -209,8 +209,8 @@ let config = {
 			module: 'MMM-Tado',
 			position: 'top_right', // This can be any of the regions.
 			config: {
-				username: 'YOUR_TADO_EMAIL', 
-				password: 'YOUR_TADO_PASSWORD', 
+				username: '${TADO_USERNAME}', 
+				password: '${TADO_PASSWORD}', 
 				updateInterval: 600000
 			}
 		}
@@ -265,7 +265,7 @@ let config = {
 					// symbol: "calendar"
 				// }
 					//{
-					//	url: 'webcal://pXX-caldav.icloud.com/published/2/YOUR_PRIVATE_CALENDAR_TOKEN',
+					//	url: '${ICLOUD_CALENDAR_URL}',
 					//	url: "file:///home/pi/.vdirsyncer/calendars/0B04B6CD-CA03-4E0E-BC55-448E142320AC/
 						//url: 'http://www.calendarlabs.com/templates/ical/US-Holidays.ics',
 						//symbol: 'calendar',
