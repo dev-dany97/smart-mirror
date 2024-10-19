@@ -1,0 +1,12 @@
+{
+  "name": "smart-mirror",
+  "private": true,
+  "description": "MagicMirror² configuration and helper scripts for a DIY smart mirror",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/config.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

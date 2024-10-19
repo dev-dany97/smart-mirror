@@ -84,17 +84,18 @@ def merge_ics_files_from_sources(input_sources, output_file):
     except Exception as e:
         print(f"Fehler beim Speichern der zusammengeführten Datei: {e}")
 
-# Eingabequellen (Liste von Ordnern und/oder URLs)
-input_sources = [
-    '/home/dany/.vdirsyncer/calendars/z-20160106-172024-160-002/', # Calendar
-    '/home/dany/.vdirsyncer/calendars/0B04B6CD-CA03-4E0E-BC55-448E142320AC', # Arbeit
-    '/home/dany/.vdirsyncer/calendars/8EFF4A11-5211-47EB-91A7-D566A7241293', # Arzttermine
-    '/home/dany/.vdirsyncer/calendars/CD419CC5-8B3F-4EFE-A4B4-6C8158290028', # Aktienkalender
-    'https://ics.tools/Feiertage/bayern.ics'
-]
+if __name__ == "__main__":
+    # Eingabequellen (Liste von Ordnern und/oder URLs)
+    input_sources = [
+        '/home/dany/.vdirsyncer/calendars/z-20160106-172024-160-002/', # Calendar
+        '/home/dany/.vdirsyncer/calendars/0B04B6CD-CA03-4E0E-BC55-448E142320AC', # Arbeit
+        '/home/dany/.vdirsyncer/calendars/8EFF4A11-5211-47EB-91A7-D566A7241293', # Arzttermine
+        '/home/dany/.vdirsyncer/calendars/CD419CC5-8B3F-4EFE-A4B4-6C8158290028', # Aktienkalender
+        'https://ics.tools/Feiertage/bayern.ics'
+    ]
 
-# Ausgabedatei
-output_file = '/home/dany/MagicMirror/modules/Calendar/merged.ics'
+    # Ausgabedatei
+    output_file = '/home/dany/MagicMirror/modules/Calendar/merged.ics'
 
-# Zusammenführen der ICS-Dateien aus den Quellen (Ordner und/oder URLs)
-merge_ics_files_from_sources(input_sources, output_file)
+    # Zusammenführen der ICS-Dateien aus den Quellen (Ordner und/oder URLs)
+    merge_ics_files_from_sources(input_sources, output_file)
