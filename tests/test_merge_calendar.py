@@ -98,3 +98,19 @@ def test_unreachable_url_is_skipped(merge, tmp_path, monkeypatch):
     assert out.exists()
     _, events = read_events(out)
     assert events == []
+
+
+def test_events_from_url_sources_are_merged(merge, tmp_path, monkeypatch):
+    class Response:
+        status_code = 200
+        content = ics("holiday-1", "Allerheiligen", "20241101T000000", "20241102T000000").encode()
+
+    monkeypatch.setattr(merge.requests, "get", lambda url: Response())
+    local = tmp_path / "local.ics"
+    local.write_text(ics("l-1", "Meeting"), encoding="utf-8")
+    out = tmp_path / "merged.ics"
+
+    merge.merge_ics_files_from_sources([str(local), "https://ics.tools/Feiertage/bayern.ics"], str(out))
+
+    _, events = read_events(out)
+    assert sorted(str(e["SUMMARY"]) for e in events) == ["Allerheiligen", "Meeting"]

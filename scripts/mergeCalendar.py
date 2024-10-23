@@ -3,6 +3,22 @@ import requests
 from icalendar import Calendar, Event
 from datetime import datetime
 
+def add_simplified_events(merged_calendar, cal):
+    """Alle Events aus cal vereinfacht (nur SUMMARY, DTSTART, DTEND, UID) übernehmen."""
+    for component in cal.subcomponents:
+        if isinstance(component, Event):
+            # Vereinfachung der Event-Daten
+            simplified_event = Event()
+
+            # Nur die wesentlichen Felder hinzufügen
+            simplified_event.add('SUMMARY', component.get('SUMMARY'))
+            simplified_event.add('DTSTART', component.get('DTSTART'))
+            simplified_event.add('DTEND', component.get('DTEND'))
+            simplified_event.add('UID', component.get('UID'))
+
+            # Das vereinfachte Event zum Kalender hinzufügen
+            merged_calendar.add_component(simplified_event)
+
 def merge_ics_files_from_sources(input_sources, output_file):
     # Erstelle einen neuen Kalender
     merged_calendar = Calendar(version="2.0")
@@ -17,6 +33,7 @@ def merge_ics_files_from_sources(input_sources, output_file):
                     # ICS-Inhalt von der URL laden
                     cal = Calendar.from_ical(response.content)
                     print(f"Datei von URL {source} erfolgreich heruntergeladen.")
+                    add_simplified_events(merged_calendar, cal)
                 else:
                     print(f"Fehler beim Abrufen der Datei von {source}: HTTP {response.status_code}")
                     continue
@@ -31,39 +48,13 @@ def merge_ics_files_from_sources(input_sources, output_file):
                             with open(file_path, 'r', encoding='utf-8') as f:
                                 cal = Calendar.from_ical(f.read())
                             print(f"Datei {filename} erfolgreich hinzugefügt.")
-                            # Alle Events aus der ICS-Datei hinzufügen
-                            for component in cal.subcomponents:
-                                if isinstance(component, Event):
-                                    # Vereinfachung der Event-Daten
-                                    simplified_event = Event()
-
-                                    # Nur die wesentlichen Felder hinzufügen
-                                    simplified_event.add('SUMMARY', component.get('SUMMARY'))
-                                    simplified_event.add('DTSTART', component.get('DTSTART'))
-                                    simplified_event.add('DTEND', component.get('DTEND'))
-                                    simplified_event.add('UID', component.get('UID'))
-
-                                    # Das vereinfachte Event zum Kalender hinzufügen
-                                    merged_calendar.add_component(simplified_event)
+                            add_simplified_events(merged_calendar, cal)
                 elif os.path.isfile(source) and source.endswith(".ics"):
                     # Einzelne lokale ICS-Datei verarbeiten
                     with open(source, 'r', encoding='utf-8') as f:
                         cal = Calendar.from_ical(f.read())
                     print(f"Datei {source} erfolgreich hinzugefügt.")
-                    # Alle Events aus der ICS-Datei hinzufügen
-                    for component in cal.subcomponents:
-                        if isinstance(component, Event):
-                            # Vereinfachung der Event-Daten
-                            simplified_event = Event()
-
-                            # Nur die wesentlichen Felder hinzufügen
-                            simplified_event.add('SUMMARY', component.get('SUMMARY'))
-                            simplified_event.add('DTSTART', component.get('DTSTART'))
-                            simplified_event.add('DTEND', component.get('DTEND'))
-                            simplified_event.add('UID', component.get('UID'))
-
-                            # Das vereinfachte Event zum Kalender hinzufügen
-                            merged_calendar.add_component(simplified_event)
+                    add_simplified_events(merged_calendar, cal)
                 else:
                     print(f"Quelle {source} ist weder ein gültiger Ordner noch eine .ics-Datei und wird übersprungen.")
                     continue
