@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title>Smart mirror, section A–A: layer structure</title>
+  <defs>
+    <pattern id="hGlass" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#e6f3fb"/>
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#8ec5e6" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="hWood" width="40" height="6" patternUnits="userSpaceOnUse">
+      <rect width="40" height="6" fill="#f2e6d6"/>
+      <path d="M0,3 C10,1.5 20,4.5 40,3" fill="none" stroke="#c9a57c" stroke-width="0.7"/>
+    </pattern>
+    <pattern id="hWall" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="9" height="9" fill="#f1f5f9"/>
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#94a3b8" stroke-width="0.8"/>
+    </pattern>
+    <marker id="aLight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,1 L10,5 L0,9 z" fill="#c2410c"/>
+    </marker>
+    <marker id="aGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,1 L10,5 L0,9 z" fill="#64748b"/>
+    </marker>
+    <marker id="aDim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M0,2 L10,5 L0,8 z" fill="#0f172a"/>
+    </marker>
+    <style>
+      .line { stroke: #0f172a; stroke-width: 1.2; }
+      .thin { stroke: #0f172a; stroke-width: 0.8; fill: none; }
+      .leader { stroke: #0f172a; stroke-width: 0.8; fill: none; }
+      .cap { font-size: 10.5px; letter-spacing: 0.08em; fill: #475569; }
+      .num { font-size: 12px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .cell { font-size: 12px; fill: #0f172a; }
+      .cellMuted { font-size: 12px; fill: #475569; }
+      .head { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; fill: #0f172a; }
+    </style>
+  </defs>
+
+  <!-- sheet -->
+  <rect x="0.5" y="0.5" width="1199" height="659" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="32" y="36" font-size="15" font-weight="700" fill="#0f172a" letter-spacing="0.04em">SMART MIRROR · SECTION A–A</text>
+  <text x="1168" y="36" class="cap" text-anchor="end">NOT TO SCALE · DIMENSIONS IN MM</text>
+  <line x1="32" y1="48" x2="1168" y2="48" stroke="#0f172a" stroke-width="1"/>
+
+  <!-- ============ SECTION VIEW ============ -->
+  <text x="60" y="84" class="cap">ROOM / VIEWING SIDE</text>
+  <text x="620" y="84" class="cap" text-anchor="middle">WALL</text>
+
+  <!-- visible display area and emitted light -->
+  <rect x="110" y="236" width="250" height="126" fill="#c2410c" fill-opacity="0.05"/>
+  <g stroke="#c2410c" stroke-width="1.4" fill="none">
+    <line x1="358" y1="262" x2="120" y2="262" marker-end="url(#aLight)"/>
+    <line x1="358" y1="299" x2="120" y2="299" marker-end="url(#aLight)"/>
+    <line x1="358" y1="336" x2="120" y2="336" marker-end="url(#aLight)"/>
+  </g>
+  <text x="120" y="228" class="cap" fill="#c2410c" style="fill:#c2410c">LIGHT FROM WHITE PIXELS</text>
+
+  <!-- ambient light reflected -->
+  <g stroke="#64748b" stroke-width="1.1" fill="none" stroke-dasharray="5 4">
+    <line x1="120" y1="400" x2="358" y2="428"/>
+    <line x1="358" y1="428" x2="120" y2="456" marker-end="url(#aGray)"/>
+  </g>
+  <text x="120" y="482" class="cap">AMBIENT LIGHT IS REFLECTED (MIRROR)</text>
+
+  <!-- wooden frame: rails and front lips -->
+  <rect x="348" y="92" width="218" height="18" fill="url(#hWood)" class="line"/>
+  <rect x="348" y="530" width="218" height="18" fill="url(#hWood)" class="line"/>
+  <rect x="348" y="110" width="12" height="16" fill="url(#hWood)" class="line"/>
+  <rect x="348" y="514" width="12" height="16" fill="url(#hWood)" class="line"/>
+
+  <!-- 1 glass -->
+  <rect x="360" y="110" width="24" height="420" fill="url(#hGlass)" class="line"/>
+  <!-- 2 display panel -->
+  <rect x="384" y="236" width="14" height="126" fill="#334155" stroke="#0f172a" stroke-width="1.2"/>
+  <line x1="386.5" y1="240" x2="386.5" y2="358" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- 3 foil, following the panel -->
+  <path d="M386,112 L386,233 L401,233 L401,365 L386,365 L386,528" fill="none" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- 4 driver board -->
+  <rect x="420" y="250" width="10" height="54" fill="#e2e8f0" class="line"/>
+  <rect x="430" y="262" width="4" height="10" fill="#0f172a"/>
+  <rect x="430" y="282" width="4" height="12" fill="#0f172a"/>
+  <path d="M401,256 C410,256 410,266 420,266" class="thin" stroke-width="1.6"/>
+  <!-- 5 raspberry pi -->
+  <rect x="420" y="320" width="12" height="50" fill="#e2e8f0" class="line"/>
+  <rect x="432" y="328" width="4" height="10" fill="#0f172a"/>
+  <rect x="432" y="346" width="4" height="16" fill="#0f172a"/>
+  <path d="M434,333 C452,326 452,290 434,288" class="thin" stroke-width="1.6"/>
+  <!-- power cables to the supply -->
+  <path d="M434,354 C470,360 476,420 476,560" class="thin"/>
+  <path d="M434,272 C486,278 490,420 490,560" class="thin"/>
+  <text x="483" y="578" class="cap" text-anchor="middle">TO PSU</text>
+
+  <!-- 7 magnetic mounts -->
+  <rect x="566" y="150" width="8" height="28" fill="#cbd5e1" class="line"/>
+  <rect x="574" y="150" width="16" height="28" fill="#64748b" class="line"/>
+  <rect x="566" y="462" width="8" height="28" fill="#cbd5e1" class="line"/>
+  <rect x="574" y="462" width="16" height="28" fill="#64748b" class="line"/>
+  <line x1="566" y1="110" x2="566" y2="530" class="thin" stroke-dasharray="4 3"/>
+
+  <!-- 8 wall with break line -->
+  <path d="M590,92 L650,92 L644,140 L656,190 L644,240 L656,290 L644,340 L656,390 L644,440 L656,490 L650,548 L590,548 Z" fill="url(#hWall)" class="line"/>
+
+  <!-- dimension: glass thickness -->
+  <line x1="360" y1="550" x2="360" y2="580" class="thin"/>
+  <line x1="384" y1="550" x2="384" y2="580" class="thin"/>
+  <line x1="340" y1="574" x2="360" y2="574" class="thin" marker-end="url(#aDim)"/>
+  <line x1="404" y1="574" x2="384" y2="574" class="thin" marker-end="url(#aDim)"/>
+  <text x="372" y="596" font-size="12" text-anchor="middle" fill="#0f172a">6</text>
+
+  <!-- balloons -->
+  <g>
+    <polyline points="372,150 312,120" class="leader"/><circle cx="372" cy="150" r="2" fill="#0f172a"/>
+    <circle cx="300" cy="114" r="12" fill="#fff" class="line"/><text x="300" y="118" class="num">1</text>
+
+    <polyline points="392,244 312,180" class="leader"/><circle cx="392" cy="244" r="2" fill="#0f172a"/>
+    <circle cx="300" cy="174" r="12" fill="#fff" class="line"/><text x="300" y="178" class="num">2</text>
+
+    <polyline points="386,500 312,526" class="leader"/><circle cx="386" cy="500" r="2" fill="#0f172a"/>
+    <circle cx="300" cy="530" r="12" fill="#fff" class="line"/><text x="300" y="534" class="num">3</text>
+
+    <polyline points="425,252 488,206" class="leader"/><circle cx="425" cy="252" r="2" fill="#0f172a"/>
+    <circle cx="500" cy="198" r="12" fill="#fff" class="line"/><text x="500" y="202" class="num">4</text>
+
+    <polyline points="426,366 488,404" class="leader"/><circle cx="426" cy="366" r="2" fill="#0f172a"/>
+    <circle cx="500" cy="410" r="12" fill="#fff" class="line"/><text x="500" y="414" class="num">5</text>
+
+    <polyline points="520,101 520,78" class="leader"/><circle cx="520" cy="101" r="2" fill="#0f172a"/>
+    <circle cx="520" cy="66" r="12" fill="#fff" class="line"/><text x="520" y="70" class="num">6</text>
+
+    <polyline points="582,164 545,136" class="leader"/><circle cx="582" cy="164" r="2" fill="#fff" stroke="#0f172a" stroke-width="0.8"/>
+    <circle cx="536" cy="128" r="12" fill="#fff" class="line"/><text x="536" y="132" class="num">7</text>
+
+    <polyline points="620,320 698,320" class="leader"/><circle cx="620" cy="320" r="2" fill="#0f172a"/>
+    <circle cx="710" cy="320" r="12" fill="#fff" class="line"/><text x="710" y="324" class="num">8</text>
+  </g>
+
+  <!-- ============ PARTS LIST ============ -->
+  <g transform="translate(790,64)">
+    <text x="0" y="-2" class="cap">PARTS LIST</text>
+    <rect x="0" y="6" width="378" height="234" fill="none" class="line"/>
+    <rect x="0" y="6" width="378" height="26" fill="#f1f5f9" class="line"/>
+    <line x1="40" y1="6" x2="40" y2="240" class="thin"/>
+    <line x1="182" y1="6" x2="182" y2="240" class="thin"/>
+    <text x="20" y="23" class="head" text-anchor="middle">POS</text>
+    <text x="50" y="23" class="head">COMPONENT</text>
+    <text x="192" y="23" class="head">SPECIFICATION</text>
+    <g class="thin">
+      <line x1="0" y1="58" x2="378" y2="58"/><line x1="0" y1="84" x2="378" y2="84"/>
+      <line x1="0" y1="110" x2="378" y2="110"/><line x1="0" y1="136" x2="378" y2="136"/>
+      <line x1="0" y1="162" x2="378" y2="162"/><line x1="0" y1="188" x2="378" y2="188"/>
+      <line x1="0" y1="214" x2="378" y2="214"/>
+    </g>
+    <g>
+      <text x="20" y="49" class="num">1</text><text x="50" y="49" class="cell">Smart mirror glass</text><text x="192" y="49" class="cellMuted">6 mm, 1200 × 650</text>
+      <text x="20" y="75" class="num">2</text><text x="50" y="75" class="cell">LCD panel (×2)</text><text x="192" y="75" class="cellMuted">AUO B156ZAN03.1, 15.6" 4K</text>
+      <text x="20" y="101" class="num">3</text><text x="50" y="101" class="cell">Light-blocking foil</text><text x="192" y="101" class="cellMuted">black, covers the whole back</text>
+      <text x="20" y="127" class="num">4</text><text x="50" y="127" class="cell">Driver board (×2)</text><text x="192" y="127" class="cellMuted">VSDISPLAY, HDMI → eDP</text>
+      <text x="20" y="153" class="num">5</text><text x="50" y="153" class="cell">Raspberry Pi 4 (×2)</text><text x="192" y="153" class="cellMuted">runs MagicMirror²</text>
+      <text x="20" y="179" class="num">6</text><text x="50" y="179" class="cell">Frame</text><text x="192" y="179" class="cellMuted">wood</text>
+      <text x="20" y="205" class="num">7</text><text x="50" y="205" class="cell">Wall mount</text><text x="192" y="205" class="cellMuted">SafemaX 16, magnetic</text>
+      <text x="20" y="231" class="num">8</text><text x="50" y="231" class="cell">Wall</text><text x="192" y="231" class="cellMuted">–</text>
+    </g>
+  </g>
+
+  <!-- ============ FRONT VIEW ============ -->
+  <text x="790" y="332" class="cap">FRONT VIEW</text>
+  <rect x="830" y="346" width="300" height="162" fill="#f8fafc" class="line"/>
+  <rect x="836" y="352" width="288" height="150" fill="none" class="thin" stroke="#94a3b8"/>
+  <rect x="892" y="385" width="86" height="48" fill="none" class="thin" stroke-dasharray="4 3"/>
+  <rect x="982" y="385" width="86" height="48" fill="none" class="thin" stroke-dasharray="4 3"/>
+  <text x="935" y="413" font-size="9.5" letter-spacing="0.06em" fill="#475569" text-anchor="middle">DISPLAY</text>
+  <text x="1025" y="413" font-size="9.5" letter-spacing="0.06em" fill="#475569" text-anchor="middle">DISPLAY</text>
+  <!-- section line A–A -->
+  <line x1="905" y1="336" x2="905" y2="518" stroke="#0f172a" stroke-width="1" stroke-dasharray="12 3 2 3"/>
+  <line x1="905" y1="336" x2="891" y2="336" stroke="#0f172a" stroke-width="1.6" marker-end="url(#aDim)"/>
+  <line x1="905" y1="518" x2="891" y2="518" stroke="#0f172a" stroke-width="1.6" marker-end="url(#aDim)"/>
+  <text x="913" y="340" font-size="12" font-weight="700" fill="#0f172a">A</text>
+  <text x="913" y="522" font-size="12" font-weight="700" fill="#0f172a">A</text>
+  <!-- overall dimensions -->
+  <line x1="830" y1="520" x2="830" y2="536" class="thin"/>
+  <line x1="1130" y1="520" x2="1130" y2="536" class="thin"/>
+  <line x1="830" y1="531" x2="1130" y2="531" class="thin" marker-start="url(#aDim)" marker-end="url(#aDim)"/>
+  <text x="980" y="524" font-size="11" text-anchor="middle" fill="#0f172a">1200</text>
+  <line x1="1134" y1="346" x2="1158" y2="346" class="thin"/>
+  <line x1="1134" y1="508" x2="1158" y2="508" class="thin"/>
+  <line x1="1152" y1="346" x2="1152" y2="508" class="thin" marker-start="url(#aDim)" marker-end="url(#aDim)"/>
+  <text x="1164" y="427" font-size="11" fill="#0f172a" transform="rotate(-90 1164 427)" text-anchor="middle">650</text>
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <g transform="translate(790,560)">
+    <rect x="0" y="0" width="378" height="76" fill="none" class="line"/>
+    <line x1="0" y1="38" x2="378" y2="38" class="thin"/>
+    <line x1="189" y1="38" x2="189" y2="76" class="thin"/>
+    <text x="10" y="14" font-size="8.5" letter-spacing="0.08em" fill="#64748b">TITLE</text>
+    <text x="10" y="31" font-size="13" font-weight="700" fill="#0f172a">Smart Mirror – layer structure</text>
+    <text x="10" y="52" font-size="8.5" letter-spacing="0.08em" fill="#64748b">DRAWN</text>
+    <text x="10" y="69" font-size="12" fill="#0f172a">D. Mohles</text>
+    <text x="199" y="52" font-size="8.5" letter-spacing="0.08em" fill="#64748b">SCALE · SHEET</text>
+    <text x="199" y="69" font-size="12" fill="#0f172a">n.t.s. · 1 / 1</text>
+  </g>
+</svg>
